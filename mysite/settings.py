@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -88,6 +90,27 @@ DATABASES = {
         'PORT': os.environ["PGPORT"],
     }
 }
+
+
+
+
+# DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres:VvLbQAMXDxYkTiGTwoaGmqyWHWoVoUPD@autorack.proxy.rlwy.net:57500/railway')
+
+# # Разбираем строку подключения
+# url = urlparse(DATABASE_URL)
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': url.path[1:],  # Имя базы данных (убираем первый слэш)
+#         'USER': url.username,
+#         'PASSWORD': url.password,
+#         'HOST': url.hostname,
+#         'PORT': url.port,
+#     }
+# }
+
+
 
 
 # Password validation
