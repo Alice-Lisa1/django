@@ -94,7 +94,7 @@ DATABASES = {
 
 
 
-# DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres:VvLbQAMXDxYkTiGTwoaGmqyWHWoVoUPD@autorack.proxy.rlwy.net:57500/railway')
+# DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres:jEjLrMCQHFbyghqgEkUdWObmCSPZZjUv@autorack.proxy.rlwy.net:18377/railway')
 
 # # Разбираем строку подключения
 # url = urlparse(DATABASE_URL)
